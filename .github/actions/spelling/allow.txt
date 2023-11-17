@@ -1,0 +1,7 @@
+github
+https
+PROTOC
+protoc
+ssh
+ubuntu
+workarounds

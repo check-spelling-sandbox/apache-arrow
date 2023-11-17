@@ -146,4 +146,5 @@ r/tools/nixlibs-allowlist.txt
 .gitattributes
 ruby/red-arrow/.yardopts
 .github/pull_request_template.md
+.github/actions/spelling/*
 swift/data-generator/swift-datagen/go.sum
