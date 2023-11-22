@@ -218,7 +218,7 @@ class TestListArray : public ::testing::Test {
     ASSERT_OK(result->ValidateFull());
     AssertArraysEqual(*result, *expected);
 
-    // Offets without nulls, will replace null with empty list
+    // Offsets without nulls, will replace null with empty list
     ASSERT_OK_AND_ASSIGN(result,
                          ArrayType::FromArrays(*offsets_wo_nulls, *values, pool_));
     ASSERT_OK(result->ValidateFull());
