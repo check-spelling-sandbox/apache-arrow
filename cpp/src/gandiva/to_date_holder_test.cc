@@ -176,7 +176,7 @@ TEST_F(TestToDateHolder, TestMakeFromFunctionNode) {
   EXPECT_OK_AND_ASSIGN(auto to_date_holder, ToDateHolder::Make(to_date_func));
 }
 
-TEST_F(TestToDateHolder, TestMakeFromInvalidSurpressParamFunctionNode) {
+TEST_F(TestToDateHolder, TestMakeFromInvalidSuppressParamFunctionNode) {
   auto non_literal_param = std::make_shared<FieldNode>(arrow::field("in", arrow::utf8()));
   auto to_date_func = BuildToDate("YYYY", std::move(non_literal_param));
   ASSERT_RAISES(Invalid, ToDateHolder::Make(to_date_func).status());
