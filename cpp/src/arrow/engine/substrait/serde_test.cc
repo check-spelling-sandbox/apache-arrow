@@ -2285,9 +2285,9 @@ TEST(SubstraitRoundTrip, BasicPlan) {
       std::get<acero::Declaration>(roundtripped_filter.inputs[0]);
   const auto& dataset_opts =
       checked_cast<const dataset::ScanNodeOptions&>(*(roundtripped_scan.options));
-  const auto& roundripped_ds = dataset_opts.dataset;
-  EXPECT_TRUE(roundripped_ds->schema()->Equals(*dummy_schema));
-  ASSERT_OK_AND_ASSIGN(auto roundtripped_frgs, roundripped_ds->GetFragments());
+  const auto& roundtripped_ds = dataset_opts.dataset;
+  EXPECT_TRUE(roundtripped_ds->schema()->Equals(*dummy_schema));
+  ASSERT_OK_AND_ASSIGN(auto roundtripped_frgs, roundtripped_ds->GetFragments());
   ASSERT_OK_AND_ASSIGN(auto expected_frgs, dataset->GetFragments());
 
   auto roundtrip_frg_vec = IteratorToVector(std::move(roundtripped_frgs));
@@ -2393,9 +2393,9 @@ TEST(SubstraitRoundTrip, BasicPlanEndToEnd) {
       std::get<acero::Declaration>(roundtripped_filter.inputs[0]);
   const auto& dataset_opts =
       checked_cast<const dataset::ScanNodeOptions&>(*(roundtripped_scan.options));
-  const auto& roundripped_ds = dataset_opts.dataset;
-  EXPECT_TRUE(roundripped_ds->schema()->Equals(*dummy_schema));
-  ASSERT_OK_AND_ASSIGN(auto roundtripped_frgs, roundripped_ds->GetFragments());
+  const auto& roundtripped_ds = dataset_opts.dataset;
+  EXPECT_TRUE(roundtripped_ds->schema()->Equals(*dummy_schema));
+  ASSERT_OK_AND_ASSIGN(auto roundtripped_frgs, roundtripped_ds->GetFragments());
   ASSERT_OK_AND_ASSIGN(auto expected_frgs, dataset->GetFragments());
 
   auto roundtrip_frg_vec = IteratorToVector(std::move(roundtripped_frgs));
