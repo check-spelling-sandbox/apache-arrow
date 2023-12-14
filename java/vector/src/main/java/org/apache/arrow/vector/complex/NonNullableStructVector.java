@@ -269,7 +269,7 @@ public class NonNullableStructVector extends AbstractStructVector {
   }
 
   /**
-   * {@link TransferPair} for this this class.
+   * {@link TransferPair} for this class.
    */
   protected static class StructTransferPair implements TransferPair {
     private final TransferPair[] pairs;
