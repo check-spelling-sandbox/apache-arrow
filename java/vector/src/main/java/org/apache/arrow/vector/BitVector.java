@@ -493,11 +493,11 @@ public final class BitVector extends BaseFixedWidthVector {
     final int lastBitIndex = firstBitIndex + count;
     final int endByteIndex = BitVectorHelper.byteIndex(lastBitIndex);
     final int startByteBitIndex = BitVectorHelper.bitIndex(firstBitIndex);
-    final int endBytebitIndex = BitVectorHelper.bitIndex(lastBitIndex);
+    final int endByteBitIndex = BitVectorHelper.bitIndex(lastBitIndex);
     if (count < 8 && startByteIndex == endByteIndex) {
       // handles the case where we don't have a first and a last byte
       byte bitMask = 0;
-      for (int i = startByteBitIndex; i < endBytebitIndex; ++i) {
+      for (int i = startByteBitIndex; i < endByteBitIndex; ++i) {
         bitMask |= (byte) (1L << i);
       }
       BitVectorHelper.setBitMaskedByte(validityBuffer, startByteIndex, bitMask);
@@ -516,9 +516,9 @@ public final class BitVector extends BaseFixedWidthVector {
       valueBuffer.setOne(startByteIndex, endByteIndex - startByteIndex);
 
       // fill in the last byte (if it's not full)
-      if (endBytebitIndex != 0) {
-        final int byteIndex = BitVectorHelper.byteIndex(lastBitIndex - endBytebitIndex);
-        final byte bitMask = (byte) (0xFFL >>> ((8 - endBytebitIndex) & 7));
+      if (endByteBitIndex != 0) {
+        final int byteIndex = BitVectorHelper.byteIndex(lastBitIndex - endByteBitIndex);
+        final byte bitMask = (byte) (0xFFL >>> ((8 - endByteBitIndex) & 7));
         BitVectorHelper.setBitMaskedByte(validityBuffer, byteIndex, bitMask);
         BitVectorHelper.setBitMaskedByte(valueBuffer, byteIndex, bitMask);
       }
