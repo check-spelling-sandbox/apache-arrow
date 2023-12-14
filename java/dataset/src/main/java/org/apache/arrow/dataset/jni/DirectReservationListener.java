@@ -51,7 +51,7 @@ public class DirectReservationListener implements ReservationListener {
   }
 
   /**
-   * Reserve bytes by invoking java.nio.java.Bitjava.nio.Bitss#reserveMemory.
+   * Reserve bytes by invoking java.nio.java.Bits#reserveMemory.
    */
   @Override
   public void reserve(long size) {
@@ -66,7 +66,7 @@ public class DirectReservationListener implements ReservationListener {
   }
 
   /**
-   * Unreserve bytes by invoking java.nio.java.Bitjava.nio.Bitss#unreserveMemory.
+   * Unreserve bytes by invoking java.nio.java.Bits#unreserveMemory.
    */
   @Override
   public void unreserve(long size) {
