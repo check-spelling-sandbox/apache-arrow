@@ -57,7 +57,7 @@ public interface FlightProducer {
    *
    * <p>If the descriptor would begin a query, the server should return a response immediately to not
    * block the client. Otherwise, the server should not return an update until progress is made to
-   * not spam the client with inactionable updates.
+   * not spam the client with unactionable updates.
    *
    * @param context Per-call context.
    * @param descriptor The descriptor identifying the data stream.
